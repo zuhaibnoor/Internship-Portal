@@ -1,7 +1,30 @@
 import './styles.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import {useState} from 'react';
+
 
 export default function Login() {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+    console.log(email); 
+    const handleLogin = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        e.preventDefault();
+        const validEmail = "admin123@gmail.com";
+        const validPassword = "admin123";
+        console.log(email+"1");
+
+        if (email === validEmail && password === validPassword) {
+            console.log(email+"2");
+            navigate('/dashboard');
+        }
+        else {
+            alert("Invalid email or password"); 
+        }
+
+
+    }
     return(
         <>
 
@@ -20,23 +43,23 @@ export default function Login() {
 
                         <div className="flex flex-col p-5 ">
                             <label htmlFor="email" className="text-[16px] text-white">Email</label>
-                            <input type="email" name="email" placeholder="abc123@email.com" id="email" className="p-2 border rounded-lg rounded-xl bg-transparent input-focus" />
+                            <input type="email" name="email" placeholder="abc123@email.com" id="email" className="p-2 border rounded-lg rounded-xl bg-transparent input-focus" value={email} onChange = {(e)=> setEmail(e.target.value)}/>
                         </div>
 
                         <div className="flex flex-col p-5 ">
                             <label htmlFor="password" className="text-[16px] text-white">Password</label>
-                            <input type="password" placeholder='Your password' name="password" id="password" className="p-2 border rounded-xl rounded-[90px] bg-transparent input-focus placeholder-opacity-0" />
+                            <input type="password" placeholder='Your password' name="password" id="password" className="p-2 border rounded-xl rounded-[90px] bg-transparent input-focus placeholder-opacity-0" value={password} onChange={(e)=> setPassword(e.target.value)}/>
                         </div>
 
 
                         <div className='flex flex-col justify-center items-center mt-5'>
                             <div className='flex flex-col justify-center items-center  p-2 w-[85%] rounded-2xl bg-white hover:bg-gray-300'>                            
-                                    <Link to="/dashboard" className="h-full w-full text-center">Login</Link>
+                                    <Link to="/dashboard" className="h-full w-full text-center" onClick={handleLogin}>Login</Link>
                             </div>
                         </div>
 
                         <div className='flex flex-col justify-center items-center mt-5'> 
-                            <Link id="getRegistered" to="/register" className="hover:border hover:rounded-xl p-2 text-white">Want yourself get Registered?</Link>
+                            <Link id="getRegistered" to="/register" className="hover:border hover:rounded-xl p-2 text-white" >Want yourself get Registered?</Link>
                         </div>
 
 
