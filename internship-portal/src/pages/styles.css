@@ -1,0 +1,25 @@
+.input-focus:focus {
+    outline: none;
+    border-color: rgb(67, 67, 255);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.205);
+}
+
+.input-focus:focus::placeholder{
+    opacity: 40%;
+    transition: all 0.3s ease;
+}
+
+.input-focus:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.205);
+}
+
+#login {
+    text-shadow: 2px 2px 4px #00000069;  
+}
+
+#getRegistered:hover{
+    color:rgb(167, 167, 238);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.205);
+}
