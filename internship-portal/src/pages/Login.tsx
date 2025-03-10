@@ -36,7 +36,7 @@ export default function Login() {
                         </div>
 
                         <div className='flex flex-col justify-center items-center mt-5'> 
-                            <Link id="getRegistered" to="/Register" className="hover:border hover:rounded-xl p-2 text-white">Want yourself get Registered?</Link>
+                            <Link id="getRegistered" to="/register" className="hover:border hover:rounded-xl p-2 text-white">Want yourself get Registered?</Link>
                         </div>
 
 
